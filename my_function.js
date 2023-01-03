@@ -45,34 +45,52 @@ console.log(
 // Function declaration in conditionals
 (function() {
 //   'use strict';
-  if (true) {
-    function ok() {
-      return 'true ok';
+    if (true) {
+        function ok() {
+            return 'true ok';
+        }
+    } else {
+        function ok() {
+            return 'false ok';
+        }
     }
-  } else {
-    function ok() {
-      return 'false ok';
-    }
-  }
-  console.log(typeof ok === 'undefined'); // => true
-  console.log(ok()); // Throws "ReferenceError: ok is not defined"
+    console.log(typeof ok === 'undefined'); // => true
+    console.log(ok()); // Throws "ReferenceError: ok is not defined"
 })();
 // if we are not writing use strict then we can declare function in conditionals like if, for or while
 // if we are writing use strict then we can not declare function in conditionals like if, for or while
 
 // we can do it like this when we are using use strict
 (function() {
-  'use strict';
-  let ok;           // we defined let ok
-  if (true) {
-    ok = function() {
-      return 'true ok';
-    };              // assign funtion to ok
-  } else {
-    ok = function() {
-      return 'false ok';
-    };              // assign function to ok
-  }
-  console.log(typeof ok === 'function'); // => true
-  console.log(ok()); // => 'true ok'
+    'use strict';
+    let ok;           // we defined let ok
+    if (true) {
+        ok = function() {
+            return 'true ok';
+        };              // assign funtion to ok
+    } else {
+        ok = function() {
+            return 'false ok';
+        };              // assign function to ok
+    }
+    console.log(typeof ok === 'function'); // => true
+    console.log(ok()); // => 'true ok'
 })();
+
+
+// function expression in details
+const count = function(array) { // Function expression
+    return array.length;
+}
+const methods = {
+    numbers: [1, 5, 8],
+    sum: function() { // Function expression
+        return this.numbers.reduce(function(acc, num) { // func. expression
+            return acc + num;
+        });
+    }
+}
+console.log(count([5, 7, 8]));  // => 3
+console.log(methods.sum());    // => 14 // methods is object sum is key of that object
+// methods.sum // expression will return function body it will not execute function
+// methods.sum() // expression will call function
