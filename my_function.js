@@ -172,3 +172,31 @@ console.log(absValue(5));    // => 5
 console.log(absValue);   // [Function: absValue]
 console.log(absValue.name); // absValue
 console.log(typeof absValue);  // function
+
+
+//************context transparancy */
+class Numbers {
+  constructor(array) {
+    this.array = array;
+  }
+  addNumber(number) {
+    if (number !== undefined) {
+       this.array.push(number);
+    } 
+    return (number) => { 
+      console.log(this === numbersObject); // => true
+      this.array.push(number);
+    };
+  }
+}
+const numbersObject = new Numbers([]);
+const addNumberMethod = numbersObject.addNumber();
+addNumberMethod(1);
+addNumberMethod(5);
+console.log(numbersObject.array); // => [1, 5]
+
+const anotherAddNumberMethod = numbersObject.addNumber(10);
+anotherAddNumberMethod(1);
+anotherAddNumberMethod(5);
+console.log(numbersObject.array); // => [ 1, 5, 10, 1, 5 ]
+
