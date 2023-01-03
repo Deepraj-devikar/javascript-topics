@@ -239,3 +239,22 @@ const generatorObject = {
 const generator3 = generatorObject.indexGenerator3();
 console.log(generator3.next().value); // => 0
 console.log(generator3.next().value); // => 1
+
+/*****************Function is first object */
+// ways to define function
+function sum1(a, b) {
+  return a + b;
+}
+const sum2 = function(a, b) {
+  return a + b;
+}
+const sum3 = (a, b) => a + b;
+console.log(typeof sum1 === 'function'); // => true
+console.log(typeof sum2 === 'function'); // => true
+console.log(typeof sum3 === 'function'); // => true
+
+const numberA = 'numberA', numberB = 'numberB';
+const sumFunction = new Function(numberA, numberB, 
+   'return numberA + numberB'
+);
+console.log(sumFunction(10, 15));  // => 25
