@@ -118,3 +118,28 @@ some engines infer the function name from this variable. However, callbacks migh
 be passed as anonymous function expressions, without storing into variables: so 
 the engine cannot determine its name.
 */
+
+// Shorthand method definition
+const collection = {
+  items: [],
+  add(...items) {
+    this.items.push(...items);
+  },
+  get(index) {
+    return this.items[index];
+  }
+}; // here method defination is different from : defination by using colon it is annonymous function defination
+// here not annonymous function it will benifitial in debuging
+collection.add('C', 'Java', 'PHP');
+console.log(collection.get(1));   // => 'Java'
+
+class Star {
+  constructor(name) {
+    this.name = name;
+  }
+  getMessage(message) {
+    return this.name + message;
+  }
+}
+const sun = new Star('Sun');
+console.log(sun.getMessage(' is shining'));   // => 'Sun is shining'
