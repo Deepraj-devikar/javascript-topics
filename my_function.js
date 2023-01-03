@@ -200,3 +200,6 @@ anotherAddNumberMethod(1);
 anotherAddNumberMethod(5);
 console.log(numbersObject.array); // => [ 1, 5, 10, 1, 5 ]
 
+//*****************Short Callback */
+const numbersList = [1, 5, 10, 0];
+console.log(numbersList.some(item => item === 0));     // => true
