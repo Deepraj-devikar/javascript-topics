@@ -112,3 +112,9 @@ const getType = function funName(variable) {
 console.log(getType(3));     // => 'number'
 console.log(getType.name);   // => 'funName'
 console.log(typeof funName); // => 'undefined'
+/*
+When a function expression const fun = function() {} is assigned to a variable, 
+some engines infer the function name from this variable. However, callbacks might 
+be passed as anonymous function expressions, without storing into variables: so 
+the engine cannot determine its name.
+*/
