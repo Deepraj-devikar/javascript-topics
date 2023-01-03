@@ -106,8 +106,8 @@ console.log("nothing printed in last log");
 
 // example 2
 const getType = function funName(variable) {
-  console.log(typeof funName === 'function'); // => true
-  return typeof variable;
+    console.log(typeof funName === 'function'); // => true
+    return typeof variable;
 }
 console.log(getType(3));     // => 'number'
 console.log(getType.name);   // => 'funName'
@@ -121,40 +121,40 @@ the engine cannot determine its name.
 
 // Shorthand method definition
 const collection = {
-  items: [],
-  add(...items) {
-    this.items.push(...items);
-  },
-  get(index) {
-    return this.items[index];
-  }
+    items: [],
+    add(...items) {
+        this.items.push(...items);
+    },
+    get(index) {
+        return this.items[index];
+    }
 }; // here method defination is different from : defination by using colon it is annonymous function defination
 // here not annonymous function it will benifitial in debuging
 collection.add('C', 'Java', 'PHP');
 console.log(collection.get(1));   // => 'Java'
 
 class Star {
-  constructor(name) {
-    this.name = name;
-  }
-  getMessage(message) {
-    return this.name + message;
-  }
+    constructor(name) {
+        this.name = name;
+    }
+    getMessage(message) {
+        return this.name + message;
+    }
 }
 const sun = new Star('Sun');
 console.log(sun.getMessage(' is shining'));   // => 'Sun is shining'
 
 // another way of shorthand method declaration
 const addMethod = 'add',
-  getMethod = 'get';
+getMethod = 'get';
 const collection2 = {
-  items: [],
-  [addMethod](...items) {
-    this.items.push(...items);
-  },
-  [getMethod](index) {
-    return this.items[index];
-  }
+    items: [],
+    [addMethod](...items) {
+        this.items.push(...items);
+    },
+    [getMethod](index) {
+        return this.items[index];
+    }
 };
 collection2[addMethod]('C', 'Java', 'PHP');
 console.log(collection2[getMethod](1));  // => 'Java'
@@ -162,10 +162,10 @@ console.log(collection2[getMethod](1));  // => 'Java'
 
 //****************ARROW FUNCTION********************
 const absValue = (number) => {
-  if (number < 0) {
-    return -number;
-  }
-  return number;
+    if (number < 0) {
+        return -number;
+    }
+    return number;
 }
 console.log(absValue(-10));  // => 10
 console.log(absValue(5));    // => 5
@@ -176,18 +176,18 @@ console.log(typeof absValue);  // function
 
 //************context transparancy */
 class Numbers {
-  constructor(array) {
-    this.array = array;
-  }
-  addNumber(number) {
-    if (number !== undefined) {
-       this.array.push(number);
-    } 
-    return (number) => { 
-      console.log(this === numbersObject); // => true
-      this.array.push(number);
-    };
-  }
+    constructor(array) {
+        this.array = array;
+    }
+    addNumber(number) {
+        if (number !== undefined) {
+            this.array.push(number);
+        } 
+        return (number) => { 
+            console.log(this === numbersObject); // => true
+            this.array.push(number);
+        };
+    }
 }
 const numbersObject = new Numbers([]);
 const addNumberMethod = numbersObject.addNumber();
@@ -203,3 +203,39 @@ console.log(numbersObject.array); // => [ 1, 5, 10, 1, 5 ]
 //*****************Short Callback */
 const numbersList = [1, 5, 10, 0];
 console.log(numbersList.some(item => item === 0));     // => true
+
+//******************Generator Function */
+// a. Function declaration form function* <name>():
+function* indexGenerator1(){
+    var index = 0;
+    while(true) {
+        yield index++;
+    }
+}
+const generator1 = indexGenerator1();
+console.log(generator1.next().value); // => 0
+console.log(generator1.next().value); // => 1
+
+// b. Function expression form function* ():
+const indexGenerator2 = function* () {
+    let index = 0;
+    while(true) {
+        yield index++;
+    }
+};
+const generator2 = indexGenerator2();
+console.log(generator2.next().value); // => 0
+console.log(generator2.next().value); // => 1
+
+// c. Shorthand method definition form *<name>():
+const generatorObject = {
+    *indexGenerator3() {
+        var index = 0;
+        while(true) {
+            yield index++;
+        }
+    }
+}
+const generator3 = generatorObject.indexGenerator3();
+console.log(generator3.next().value); // => 0
+console.log(generator3.next().value); // => 1
