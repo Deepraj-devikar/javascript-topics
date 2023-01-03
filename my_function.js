@@ -9,3 +9,5 @@ function isEven(num) {
 }
 console.log(isEven(24)); // => true
 console.log(isEven(11)); // => false
+console.log(isEven.name); // isEven
+console.log(typeof isEven); // function 
