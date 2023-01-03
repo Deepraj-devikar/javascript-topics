@@ -158,3 +158,17 @@ const collection2 = {
 };
 collection2[addMethod]('C', 'Java', 'PHP');
 console.log(collection2[getMethod](1));  // => 'Java'
+
+
+//****************ARROW FUNCTION********************
+const absValue = (number) => {
+  if (number < 0) {
+    return -number;
+  }
+  return number;
+}
+console.log(absValue(-10));  // => 10
+console.log(absValue(5));    // => 5
+console.log(absValue);   // [Function: absValue]
+console.log(absValue.name); // absValue
+console.log(typeof absValue);  // function
