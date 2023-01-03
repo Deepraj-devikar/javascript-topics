@@ -24,19 +24,19 @@ main > printSquare(4)
 main 
  */
 /**-------------------------------------------- */
-function foo(){
-    throw new Error("Oops!");
-}
+// function foo(){
+//     throw new Error("Oops!");
+// }
 
-function bar(){
-    foo();
-}
+// function bar(){
+//     foo();
+// }
 
-function baz() {
-    bar();
-}
+// function baz() {
+//     bar();
+// }
 
-baz();
+// baz();
 
 /**OUTPUT */
 /**
@@ -44,11 +44,11 @@ baz();
  */
 // Same as upper code
 /**--------------------------------------------------- */
-function functionFoo(){
-    functionFoo()
-}
+// function functionFoo(){
+//     functionFoo()
+// }
 
-functionFoo()
+// functionFoo()
 
 // RangeError: Maximum call stack size exceeded
 /**------------------------------------------------------ */
