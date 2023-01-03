@@ -94,3 +94,21 @@ console.log(count([5, 7, 8]));  // => 3
 console.log(methods.sum());    // => 14 // methods is object sum is key of that object
 // methods.sum // expression will return function body it will not execute function
 // methods.sum() // expression will call function
+
+// function name indetail
+// example 1
+console.log(count.name);   // count
+console.log(methods.sum.name);   // sum
+console.log((
+    function(variable) {return typeof variable; }).name
+);                          // ''
+console.log("nothing printed in last log");
+
+// example 2
+const getType = function funName(variable) {
+  console.log(typeof funName === 'function'); // => true
+  return typeof variable;
+}
+console.log(getType(3));     // => 'number'
+console.log(getType.name);   // => 'funName'
+console.log(typeof funName); // => 'undefined'
