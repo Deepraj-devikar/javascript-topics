@@ -137,3 +137,119 @@ scope of const is found inside of function as well
 
 // const a = 10;
 // console.log(a); // 10
+
+/**---------------------------------------------------------------------------------- */
+
+// var a = 10;
+
+// functionBlock();
+
+// function functionBlock(){
+//     console.log(a); // 10
+// }
+
+/**------------------------------------------------------------------------------------- */
+// var a = 10;
+
+// functionBlock();
+
+// function functionBlock(){
+//     console.log(a); // undefined
+//     var a = 20
+// }
+
+/**------------------------------------------------------------------------------------- */
+
+// var a = 10;
+
+// functionBlock();
+
+// function functionBlock(){
+//     console.log(a); // 10
+//     a = 20
+//     console.log(a); // 20
+// }
+
+/**------------------------------------------------------------------------------------------ */
+
+// let a = 10;
+
+// functionBlock();
+
+// function functionBlock(){
+//     console.log(a); // 10
+// }
+
+/**------------------------------------------------------------------------------------- */
+// let a = 10;
+
+// functionBlock();
+
+// function functionBlock(){
+//     console.log(a); // ReferenceError: Cannot access 'a' before initialization
+//     let a = 20
+// }
+
+/**------------------------------------------------------------------------------------- */
+
+// let a = 10;
+
+// functionBlock();
+
+// function functionBlock(){
+//     console.log(a); // undefined
+//     var a = 20
+// }
+
+/**--------------------------------------------------------------------------------------- */
+
+// let a = 10;
+
+// functionBlock();
+
+// function functionBlock(){
+//     console.log(a); // 10
+//     a = 20
+//     console.log(a); // 20
+// }
+
+/**---------------------------------------------------------------------------------------- */
+
+// const a = 10;
+
+// functionBlock();
+
+// function functionBlock(){
+//     console.log(a); // 10
+// }
+
+/**------------------------------------------------------------------------------------- */
+// const a = 10;
+
+// functionBlock();
+
+// function functionBlock(){
+//     console.log(a); // ReferenceError: Cannot access 'a' before initialization
+//     const a = 20
+// }
+
+/**------------------------------------------------------------------------------------- */
+
+// const a = 10;
+
+// functionBlock();
+
+// function functionBlock(){
+//     console.log(a); // 10
+// }
+
+/**-------------------------------------------------------------------------------------- */
+// const a = 10;
+
+// functionBlock();
+
+// function functionBlock(){
+//     console.log(a); // 10
+//     a = 20 // TypeError: Assignment to constant variable.
+//     console.log(a); // 20
+// }
