@@ -143,3 +143,18 @@ class Star {
 }
 const sun = new Star('Sun');
 console.log(sun.getMessage(' is shining'));   // => 'Sun is shining'
+
+// another way of shorthand method declaration
+const addMethod = 'add',
+  getMethod = 'get';
+const collection2 = {
+  items: [],
+  [addMethod](...items) {
+    this.items.push(...items);
+  },
+  [getMethod](index) {
+    return this.items[index];
+  }
+};
+collection2[addMethod]('C', 'Java', 'PHP');
+console.log(collection2[getMethod](1));  // => 'Java'
