@@ -1,5 +1,8 @@
 // Function is block of code.
 
+// we can call function before its defination
+console.log(isEven(30)); // => true
+
 // function declaration
 function isEven(num) {
   return num % 2 === 0;
