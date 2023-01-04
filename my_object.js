@@ -26,7 +26,11 @@ const person2 = {
     lastName: "Solanki",
     age: 29,
     fullName: () => this.firstName + " " + this.lastName
-};
+}
+const display = (person2) => console.log(person2.firstName + " " + person2.lastName);
+
+console.log("/***************************CHECK");
+display(person2);
 
 console.log(person);
 /**
@@ -77,4 +81,47 @@ console.log(person2);
   lastName: 'Solanki',
   fullName: [Function: fullName]
 }
+ */
+
+// nested object
+person.car = {};
+person.car.car1 = 'TATA Avinya';
+person.car.car2 = 'Audi';
+console.log(person);
+/**
+{
+  firstName: 'Deepraj',
+  lastName: 'Devikar',
+  age: 26,
+  fullName: [Function: fullName],
+  car: { car1: 'TATA Avinya', car2: 'Audi' }
+}
+ */
+
+// nested arrays and object
+cars = person.car;
+delete person.car;
+person.cars = [];
+person.cars.push({carName: "TATA Avinya", carType: 'EV'});
+person.cars.push({carName: "Audi", carType: 'EV'});
+console.log(person);
+/**
+{
+  firstName: 'Deepraj',
+  lastName: 'Devikar',
+  age: 26,
+  fullName: [Function: fullName],
+  cars: [
+    { carName: 'TATA Avinya', carType: 'EV' },
+    { carName: 'Audi', carType: 'EV' }
+  ]
+}
+ */
+
+for (let carNumber in person.cars){
+    console.log(person.cars[carNumber].carName+" type "+person.cars[carNumber].carType);
+}
+/**
+TATA Avinya type EV
+Audi type EV
  */

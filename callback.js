@@ -112,3 +112,32 @@ function summation(numbers, callBack){
     }
     return total;
 }
+/**------------------------------------------ */
+var mySum = {
+    type: "operation",
+    calculate: function (a, b){
+        return a + b;
+    }
+}
+
+var deepraj = {
+    type: "information",
+    firstName: "Deepraj",
+    lastName: "Devikar",
+}
+
+// nested call back
+function info(data, a, b){
+    if (data.type == 'operation'){
+        return data.calculate(a, b)
+    } else if (data.type == 'information'){
+        return data[a] + " " + data[b];
+    }
+}
+
+console.log(info(mySum, 5, 4));
+console.log(info(deepraj, "firstName", "lastName"));
+/**
+9
+Deepraj Devikar
+ */
