@@ -49,20 +49,20 @@ value of check outside block and inside function is undefined, it didn't gave er
 scope of var is not found inside of function
  */
  /**------------------------------------------------------------------------ */
-// let value = "check outside"
+let value = "check outside"
 
-// function functionBlock(){
-//     // let value = "check outside block and inside function"
-//     console.log(value+" => printing in function");
-//     {
-//         let value = "check inside block"
-//         console.log(value+" => printing in block");
-//     }
-// }
+function functionBlock(){
+    // let value = "check outside block and inside function"
+    console.log(value+" => printing in function");
+    {
+        let value = "check inside block"
+        console.log(value+" => printing in block");
+    }
+}
 
-// console.log(value+" => print outside"); // giving error here if commented "check outside"
-//                                         // error is -> value is not defined, so i uncommented it
-// functionBlock()
+console.log(value+" => print outside"); // giving error here if commented "check outside"
+                                        // error is -> value is not defined, so i uncommented it
+functionBlock()
 /** OUTPUT */
 /**
 check outside => print outside
