@@ -173,6 +173,34 @@ console.log(absValue);   // [Function: absValue]
 console.log(absValue.name); // absValue
 console.log(typeof absValue);  // function
 
+console.log("/*************ARROW FUNCTION*********************");
+// not arrow function
+var notArrowFunction = function (){
+    return "I am not arrow function";
+}
+
+// arrow function
+var arrowFunction = () => {
+    return "I am arrow function";
+}
+// it can be again shorter
+arrowFunction = () => "I am edited arrow function";
+// Note: This works only if the function has only one statement.
+
+// arrow function with parameters
+var helloFunction = (val) => "Hello " + val;
+// it can be again shorter we can remove paranthesis
+helloFunction = val => val + " Hello again";
+
+console.log(arrowFunction());
+console.log(helloFunction("Deepraj"));
+
+/**OUTPUT
+I am edited arrow function
+Deepraj Hello again
+ */
+
+console.log("/***********************************************");
 
 //************context transparancy */
 class Numbers {
