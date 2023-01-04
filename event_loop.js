@@ -108,17 +108,17 @@ console.log('Deepraj');
     });
  */
 /**------------------------------------------------------------------------------ */
-// console.log('Started');
+console.log('Started');
 
-// $.on('button', 'click', function onClick(){
-//     console.log("Clicked");
-// });
+$.on('button', 'click', function onClick(){
+    console.log("Clicked");
+});
 
-// setTimeout(function onTimeout(){
-//     console.log('Timeout Finished');
-// });
+setTimeout(function onTimeout(){
+    console.log('Timeout Finished');
+});
 
-// console.log('Done');
+console.log('Done');
 
 /**
     console . log started will execute
@@ -139,6 +139,14 @@ console.log('Deepraj');
     and when ever button on click event occur it will go to task queue and will chekc for call stack clear
     and if found call stack clear it will execute
  */
+
+ /**
+ 
+ event loop is checks that call stack is clear or not for executing elements in task queue and microtask queue
+
+- microtask queue has higher priority than task queue
+- microtask queue poinst only promises and mutations
+  */
 
 /** On very important note when call is moving from task queue to call stack it will check for stack clear 
     if it not found stack clear it will wait in task queue
