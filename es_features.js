@@ -205,3 +205,137 @@ myPromise2.then(function(value) {
 });
 // I am executed
 // after 3 seconds
+//--------------------------------------------------------------
+// Symbol type
+const newPerson = {
+  firstName: "Chetak",
+  lastName: "Maruti",
+  age: 50,
+  eyeColor: "blue"
+};
+
+let id = Symbol('id');
+newPerson[id] = 140353;
+// Now person[id] = 140353
+// but person.id is still undefined
+console.log(newPerson);
+/**
+{
+  firstName: 'Chetak',
+  lastName: 'Maruti',
+  age: 50,
+  eyeColor: 'blue',
+  [Symbol(id)]: 140353
+}
+ */
+
+console.log(id); // Symbol(id)
+
+/**
+A JavaScript Symbol is a primitive datatype just like Number, String, or Boolean.
+
+It represents a unique "hidden" identifier that no other code can accidentally access.
+
+For instance, if different coders want to add a person.id property to a person object belonging to a third-party code, they could mix each others values. */
+
+// functions can have default values
+function myFunction(x, y = 10) {
+  // y is 10 if not passed or undefined
+  return x + y;
+}
+myFunction(5); // will return 15
+
+function spredFunction(...x){
+    console.log(x);
+}
+
+spredFunction(1,2,3,4,5,6); // [ 1, 2, 3, 4, 5, 6 ]
+
+function spredFunction2(a, b, ...x){
+    console.log(a);
+    console.log(b);
+    console.log(x);
+}
+
+spredFunction2(1,2,3,4,5,6);
+/**
+1
+2
+[ 3, 4, 5, 6 ]
+ */
+
+// function spredFunction3(...x, a, b){
+//     console.log(a);
+//     console.log(b);
+//     console.log(x);
+// }
+
+// spredFunction3(1,2,3,4,5,6); // SyntaxError: Rest parameter must be last formal parameter
+
+let text = "Hello world, welcome to the universe.";
+text.includes("world")    // Returns true
+text.startsWith("Hello")   // Returns true
+text.endsWith(".")    // Returns true
+
+Array.from("ABCDEFG")   // Returns [A,B,C,D,E,F,G]
+
+const numbers = [14, 2, 6, 8, 1, 9];
+// console.log(numbers.find(8)); // TypeError: 8 is not a function
+console.log(
+    numbers.find(
+        (number) => number % 2 == 0
+    )
+); // 14
+
+console.log(
+    numbers.findIndex(
+        (number) => number % 2 == 0
+    )
+); // 0
+
+// Math.trunc(x) returns the integer part of x:
+console.log(Math.trunc(4.9));    // returns 4
+console.log(Math.trunc(4.7));    // returns 4
+console.log(Math.trunc(4.4));    // returns 4
+console.log(Math.trunc(4.2));    // returns 4
+console.log(Math.trunc(-4.2));    // returns -4
+
+// Math.sign(x) returns if x is negative, null or positive:
+console.log(Math.sign(-4));    // returns -1
+console.log(Math.sign(0));    // returns 0
+console.log(Math.sign(4));    // returns 1
+
+// Math.cbrt(x) returns the cube root of x:
+console.log(Math.cbrt(8));    // returns 2
+console.log(Math.cbrt(64));    // returns 4
+console.log(Math.cbrt(125));    // returns 5
+
+// Math.log2(x) returns the base 2 logarithm of x:
+console.log(Math.log2(2));    // returns 1
+
+// Math.log10(x) returns the base 10 logarithm of x:
+console.log(Math.log10(10));    // returns 1
+
+console.log("***************************************************************");
+let epsilon = Number.EPSILON;
+console.log(epsilon); // 2.220446049250313e-16
+
+let minSafeInteger = Number.MIN_SAFE_INTEGER;
+console.log(minSafeInteger); // -9007199254740991
+
+let maxSafeInteger = Number.MAX_SAFE_INTEGER;
+console.log(maxSafeInteger); // 9007199254740991
+
+Number.isInteger(10);        // returns true
+Number.isInteger(10.5);      // returns false
+
+Number.isSafeInteger(10);    // returns true
+Number.isSafeInteger(12345678901234567890);  // returns false
+
+isFinite(10/0);       // returns false
+isFinite(10/1);       // returns true
+
+// in JS 2016
+const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits2.includes("Mango"); // true
