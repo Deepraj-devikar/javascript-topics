@@ -141,3 +141,32 @@ console.log(info(deepraj, "firstName", "lastName"));
 9
 Deepraj Devikar
  */
+
+function add(a, b, callBack){
+    callBack(false)
+    console.log("I am add and I got "+a+", "+b);
+}
+
+function sub(a, b, callBack){
+    callBack(false)
+    console.log("I am sub and I got "+a+", "+b);
+}
+
+function mul(a, b, callBack){
+    callBack(false)
+    console.log("I am mul and I got "+a+", "+b);
+}
+
+add(1, 2, function(error){
+    if(!error){
+        sub(3, 4, function(error){
+            if(!error){
+                mul(5, 6, function(error){
+                    if(!error){
+                        console.log("I am done");
+                    }
+                })
+            }
+        })
+    }
+});
