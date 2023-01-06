@@ -65,42 +65,42 @@ I done with my food and food was testy.
 
 // Lets do it with promis
 
-let isHungry = true;
+// let isHungry = true;
 
-const haveToEatFood = (time, task) => {
-    return new Promise((resolve, reject) => {
-        if (isHungry) {
-            setTimeout(() => {
-                resolve(task());
-            }, time);
-        } else {
-            reject("No I am not hungry.");
-        }
-    })
-};
+// const haveToEatFood = (time, task) => {
+//     return new Promise((resolve, reject) => {
+//         if (isHungry) {
+//             setTimeout(() => {
+//                 resolve(task());
+//             }, time);
+//         } else {
+//             reject("No I am not hungry.");
+//         }
+//     })
+// };
 
-haveToEatFood(2000, () => console.log("I took plate."))
-.then(() => {
-    return haveToEatFood(2000, () => console.log("I took roti."));
-})
-.then(() => {
-    return haveToEatFood(1000, () => console.log("I took sabji."));
-})
-.then(() => {
-    return haveToEatFood(1000, () => console.log("I finished roti with half of sabji."));
-})
-.then(() => {
-    return haveToEatFood(1000, () => console.log("I took rice."));
-})
-.then(() => {
-    return haveToEatFood(1000, () => console.log("I finished rice with remaining sabji."));
-})
-.then(() => {
-    return haveToEatFood(0, () => console.log("I done with my food and food was testy."));
-})
-.catch(() => {
-    console.log("No I am not hungry.");
-});
+// haveToEatFood(2000, () => console.log("I took plate."))
+// .then(() => {
+//     return haveToEatFood(2000, () => console.log("I took roti."));
+// })
+// .then(() => {
+//     return haveToEatFood(1000, () => console.log("I took sabji."));
+// })
+// .then(() => {
+//     return haveToEatFood(5000, () => console.log("I finished roti with half of sabji."));
+// })
+// .then(() => {
+//     return haveToEatFood(2000, () => console.log("I took rice."));
+// })
+// .then(() => {
+//     return haveToEatFood(4000, () => console.log("I finished rice with remaining sabji."));
+// })
+// .then(() => {
+//     return haveToEatFood(0, () => console.log("I done with my food and food was testy."));
+// })
+// .catch(() => {
+//     console.log("No I am not hungry.");
+// });
 
 /**OUTPUT
 I took plate.
@@ -114,8 +114,28 @@ I done with my food and food was testy.
 
 // lets do it with async await
 
-// let isHungry = true;
+function promisReturningFunction () {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(10);
+        }, 2000)
+    });
+}
 
-// async function haveToEatFood(){
-    
-// }
+async function myAsyncFunction(){
+    let a = 8;
+    console.log("before call await and promise.");
+    await promisReturningFunction(console.log("I am actual promise."))
+    .then((data) => {
+        console.log("I got "+data);
+    });
+    console.log("after created await promise");
+}
+
+myAsyncFunction();
+/**
+before call await and promise.
+I am actual promise.
+I got 10
+after created await promise
+ */
