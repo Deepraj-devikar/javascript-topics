@@ -191,3 +191,99 @@ Assignments are executed after other operations
 2	...	Spread	... x
 1	,	Comma	x , y
  */
+
+
+// DATA TYPES
+
+/**
+JavaScript has 8 Datatypes
+1. String
+2. Number
+3. Bigint
+4. Boolean
+5. Undefined
+6. Null
+7. Symbol
+8. Object
+
+The Object Datatype
+The object data type can contain:
+
+1. An object
+2. An array
+3. A date
+ */
+
+// STRING METHODS
+
+/**
+String length
+String slice()
+String substring()
+String substr()
+String replace()
+String replaceAll()
+String toUpperCase()
+String toLowerCase()
+String concat()
+String trim()
+String trimStart()
+String trimEnd()
+String padStart()
+String padEnd()
+String charAt()
+String charCodeAt()
+String split()
+ */
+
+/**
+Extracting string parts
+slice(start, end)
+substring(start, end)
+substr(start, length)
+ */
+
+/**
+javaScript Search Methods
+String indexOf()
+String lastIndexOf()
+String search()
+String match()
+String matchAll()
+String includes()
+String startsWith()
+String endsWith() */
+
+/**
+Multiline Strings
+Template literals allows multiline strings:
+
+Example
+let text =
+`The quick
+brown fox
+jumps over
+the lazy dog`;
+ */
+
+/**
+Variable Substitutions
+Template literals allow variables in strings:
+
+Example
+let firstName = "John";
+let lastName = "Doe";
+
+let text = `Welcome ${firstName}, ${lastName}!`; 
+*/
+
+/**
+Expression Substitution
+Template literals allow expressions in strings:
+
+Example
+let price = 10;
+let VAT = 0.25;
+
+let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+ */
