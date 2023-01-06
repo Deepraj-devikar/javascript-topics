@@ -285,5 +285,7 @@ one thing about string and number
 '2' + 2 + '2' = '222'
 '2' + '2' + 2 = '222'
 '2' + '2' + '2' = '222'
+
+if we are decalring variables with same name and we are using var, let, const then first occurence will execute
  */
 
